@@ -137,13 +137,69 @@ namespace task_1
 
                         string reversedNum = string.Join("", reversedCharArr);
                         Console.WriteLine($"The Reversed Num is : {reversedNum}");
-          
 
-           
-                        Console.ReadKey();
-                    }
 
+            // =========================================================== lec 3  =================================================
+
+
+            //task 1 (Bank account object from banck account class)
+                    Console.WriteLine();
+
+                    Console.WriteLine("============================ Bank Account Class ===========================================");
+                    Console.WriteLine();
+
+                    BankAccount account_1 = new BankAccount();
+
+                    account_1.SetId(20);
+                    account_1.SetName("Zenab");
+                    //Console.WriteLine(ban.GetId());
+                    //Console.WriteLine (account_1.GetName());
+                    account_1.Deposite(5000);
+
+                    account_1.Print();
+                    Console.WriteLine();
         
+                    account_1.Withdrawl(500);
+                    account_1.Print();
+                    Console.WriteLine();
+
+                    account_1.Deposite(50);
+                    account_1.Print();
+
+                    Console.WriteLine();
+
+
+                    //task 2 (complex Number)
+
+                    Console.WriteLine("============================ Complex Num Class ===========================================");
+                    Console.WriteLine();
+
+                    ComplexNum num_1 = new ComplexNum();
+
+                    num_1.SetRealNum(5);
+                    num_1.SetImaginaryNum(- 3.35);
+                    Console.WriteLine($"The Real Numer is : {num_1.GetRealNum()}");
+                    Console.WriteLine($"The Real Numer is : {num_1.GetImaginaryNum()}");
+                    num_1.PrintNum();
+                    Console.WriteLine();
+
+                    //task 3 (student class)
+                    Console.WriteLine("============================ Student Class ===========================================");
+                    Console.WriteLine();
+
+                    Student std_1 = new Student();
+
+                    std_1.SetId(123456);
+                    std_1.SetName("Zenab Mohamed");
+                    std_1.SetAge(21);
+                    std_1.SetGrade(87.6);
+                    std_1.PrintInfo();
+                    Console.WriteLine();
+          
+            
+            Console.ReadKey();
+
+        }
 
     }
             
