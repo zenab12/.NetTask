@@ -42,6 +42,8 @@ namespace task_1
         {
             if ((b < balance) && (b > 100))
                 balance -= b;
+            else if ((balance > 100) && (b <= 100))
+                Console.WriteLine("Sorry! You Can't Withdrawl less than 1000");
             else
                 Console.WriteLine("your account not contain this amount of money");
           return balance;
