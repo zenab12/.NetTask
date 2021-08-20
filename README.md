@@ -1,2 +1,2 @@
 # .NetTask
-4 tasks about fundamental C#
+tasks about fundamental C# with oop
