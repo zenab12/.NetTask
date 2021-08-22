@@ -55,7 +55,7 @@ namespace task_1
 
                         //task2
 
-            /*
+            
 
                         Console.WriteLine("enter the 7 digit to get the largest space between samilar values");
 
@@ -197,11 +197,9 @@ namespace task_1
                     std_1.SetGrade(87.6);
                     std_1.PrintInfo();
                     Console.WriteLine();
-            */
+            
 
             // =========================================================== lec 4  =================================================
-
-
 
             // task1 example about calling by ref and calling by val
 
