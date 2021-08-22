@@ -55,6 +55,8 @@ namespace task_1
 
                         //task2
 
+            /*
+
                         Console.WriteLine("enter the 7 digit to get the largest space between samilar values");
 
                         int[] arr2 = new int[7];
@@ -195,12 +197,174 @@ namespace task_1
                     std_1.SetGrade(87.6);
                     std_1.PrintInfo();
                     Console.WriteLine();
-          
-            
-            Console.ReadKey();
+            */
 
+            // =========================================================== lec 4  =================================================
+
+
+
+            // task1 example about calling by ref and calling by val
+
+            int num1 = 20;
+            int num2 = 30;
+            Console.WriteLine("num1 is : " + num1 + " before swapping ");
+            Console.WriteLine("num2 is : " + num2 + " before swapping");
+            Console.WriteLine();
+
+            Swaping( num1, num2);//call by value
+
+            Console.WriteLine("num1 is " + num1 + " after swapping calling by value");
+            Console.WriteLine("num2 is " + num2 + " after swapping calling by value");
+
+            Console.WriteLine();
+            Console.WriteLine("===================================================");
+            Console.WriteLine();
+
+            Console.WriteLine("num1 is : " + num1 + " before swapping");
+            Console.WriteLine("num2 is : " + num2 + " before swapping");
+
+            Swap(ref num1, ref num2);//call by ref
+
+            Console.WriteLine("num1 is " + num1 + " after swapping calling by value by ref");
+            Console.WriteLine("num2 is " + num2 + " after swapping calling by value by ref");
+
+
+            //task3 - Factorial Func 
+            int facstOfNum = 5;
+            Console.WriteLine(Factorial(facstOfNum));
+
+            //task4 - Power Func
+            Console.WriteLine(Power(y:5,x:2));//named argument will make as this 2**5
+
+            //task 5 Calc using outkeyword
+            double num_12 = 40;
+            double num_23 = 25;
+            string res;
+            char op = '/';
+            Calc(ref num_12,ref num_23,ref op,out res);
+            Console.WriteLine(res);
+
+            //task6 primaryNUM
+
+            PrimNum(100);
+          
+
+            Console.ReadKey();
         }
 
+            //Swap Method using calling by value 
+            static void Swaping(int x, int y)
+            {
+                int temp = x;
+                x = y;
+                y = temp;
+            }
+
+            //swap Method with referce calling 
+            static void Swap(ref int x, ref int y)
+                {
+                    int temp = x;
+                    x = y;
+                    y = temp;
+                }
+
+            //factorial using recersive Method
+            public static int Factorial(int x = 0)
+            {
+                int result = 0;
+                if (x == 0)
+                    return 1;
+                result = x * Factorial(x - 1);
+                return result;
+            }
+
+            //power method 
+            public static double Power(double x = 1,double y =1)
+            {
+              double result = 1;
+
+            for (var i = 1; i <= y; i++)
+            {
+                result *= x;
+            }
+                return result;
+            }
+
+        //get the value of arthematic operations with param you enetered
+            public static void Calc(ref double x, ref double y, ref char op, out string finalResult)
+            {
+
+                string opName = "";
+                double result = 0;
+
+                switch (op)
+                {
+                    case '+':
+                        opName = "Summation";
+                        result = x + y;
+                        finalResult = $"the {opName} is : {result} ";
+                        //Console.WriteLine(finalResult);
+                        break;
+
+                    case '-':
+                        opName = "Subtraction";
+                        result = x - y;
+                        finalResult = $"the {opName} is : {result} ";
+                        //Console.WriteLine(finalResult);
+                        break;
+
+                    case '*':
+                        opName = "Multiply";
+                        result = x * y;
+                        finalResult = $"the {opName} is : {result} ";
+                        //Console.WriteLine(finalResult);
+                        break;
+
+                    case '/':
+                        opName = "Divsion";
+                        result = x / y;
+                        finalResult = $"the {opName} is : {result} ";
+                        //Console.WriteLine(finalResult);
+                        break;
+
+                    default:
+                        finalResult = "this is not valid operation please try again";
+                        //Console.WriteLine(finalResult);
+                        break;
+                }
+            }
+
+            //task 6 primary Method
+
+            public static void PrimNum(int num = 0)
+            {
+
+                for (int i = 2; i <= num; i++)
+                {
+                    bool check = true;
+
+                    for (int j = 2; j < i; j++)
+                    {
+                        if (i % j == 0)
+                        {
+                            check = false;
+                            break;
+                        }
+                    }
+
+                    if (check)
+                    {
+                        Console.WriteLine(i);
+                    }
+
+                }
+
+             
+            }
+
+
+        //==========================================================================lec 5 ========================================================
+
+
     }
-            
 }
