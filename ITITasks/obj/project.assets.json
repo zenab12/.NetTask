@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\C#\\task 1\\task 1\\task 1.csproj",
-      "projectName": "task 1",
-      "projectPath": "F:\\C#\\task 1\\task 1\\task 1.csproj",
+      "projectUniqueName": "F:\\C#\\task 1\\ITITasks\\ITITasks.csproj",
+      "projectName": "ITITasks",
+      "projectPath": "F:\\C#\\task 1\\ITITasks\\ITITasks.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "F:\\C#\\task 1\\task 1\\obj\\",
+      "outputPath": "F:\\C#\\task 1\\ITITasks\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

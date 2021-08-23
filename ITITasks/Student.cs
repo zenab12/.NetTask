@@ -4,46 +4,11 @@ using System.Text;
 
 namespace task_1
 {
-    class Student
+   public class Student:Person
     {
-        int id;
-        int age;
+     
         double grade;
-        string name;
         string state = "";
-
-
-        public void SetId(int _id)
-        {
-            id = _id;
-        }
-        public int GetId()
-        {
-            return id;
-        }
-
-        public void SetName(string _name)
-        {
-            if (_name.Length >= 2)
-                name = _name;
-        }
-        public string GetName()
-        {
-            return name;
-        }
-
-
-        public void SetAge(int _age)
-        {
-            age = _age;
-        }
-        public int  GetAge()
-        {
-            return age;
-        }
-
-
-
         public void SetGrade(double _grade)
 
         {
@@ -79,10 +44,32 @@ namespace task_1
             return grade;
         }
 
-
-        public void PrintInfo()
+        public  Student()
         {
-            Console.WriteLine($"Hello {name} , Your ID is {id} , Your age {age} is and  Your Grade is {grade} so you are {state}");
+            Console.WriteLine("this is a constructor of Student class with no param");
+        }
+
+        public Student(int _id):base(_id)
+        {
+            Console.WriteLine("this is a constructor of Student class with one param");
+        }
+
+        public Student(int _id, string _name) : base(_id,_name)
+        {
+            Console.WriteLine("this is a constructor of Student class with two param");
+        }
+
+        public Student( int _id, string _name, int _age) : base(_id,_name,_age)
+        {
+            Console.WriteLine("this is a constructor of Student class with three param");
+        }
+
+
+        public override void Print()
+        {
+
+            base.Print(); // to exec methods in parent class and child class 
+            Console.WriteLine($"Hello {Name} , Your ID is {Id} , Your age {Age} is and  Your Grade is {grade} so you are {state}");
 
         }
 

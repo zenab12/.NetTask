@@ -4,365 +4,440 @@ using System.Collections.Generic;
 using System.Linq;
 namespace task_1
 {
-    class Program
-    {
+class Program
+{
         static void Main(string[] args)
         {
-            
-                        Console.WriteLine("please enter your name");
-                        String userName =  Console.ReadLine();
-                        Console.WriteLine("Hello {0} in our program . enjoy! \n", userName);
 
-                        //task1 
+         Console.WriteLine("please enter your name");
+            String userName =  Console.ReadLine();
+            Console.WriteLine("Hello {0} in our program . enjoy! \n", userName);
 
-                        int[] arr = new int [4];
-                        int sum = 0;
-                        int maxVal =0;
-                        int minVal =0;
+            //task1 
 
-                        Console.WriteLine("Please enter 4 numbers as array to get the summation of it and minVal and maxVal ");
+            int[] arr = new int [4];
+            int sum = 0;
+            int maxVal =0;
+            int minVal =0;
 
-                        for(int i =0; i < arr.Length;i++)
-                        {               
-                             arr [i] = int.Parse(Console.ReadLine());
-                             sum += arr[i];
+            Console.WriteLine("Please enter 4 numbers as array to get the summation of it and minVal and maxVal ");
 
-                        }
-                        Array.Sort(arr);
-                        foreach (int i in arr)
+            for(int i =0; i < arr.Length;i++)
+            {               
+                arr [i] = int.Parse(Console.ReadLine());
+                sum += arr[i];
+
+            }
+            Array.Sort(arr);
+            foreach (int i in arr)
+            {
+                maxVal = arr[arr.Length - 1];
+                minVal = arr[0];
+            }
+
+            Console.WriteLine("max: " + maxVal + " and minVal: " + minVal + " and sum : " + sum + "\n");
+
+
+
+            //another solutuon 
+
+            /*
+            for(int i =0; i < arr.Length;i++)
+            {               
+                arr [i] = int.Parse(Console.ReadLine());
+                maxVal = arr.Max();//worked due to linq class of sys
+                minVal = arr.Min();
+                sum += arr[i];
+            }
+            Console.WriteLine("max: " + maxVal + " and minVal: " + minVal + " and sum : " + sum);
+            */
+
+
+                     //task2
+
+                    Console.WriteLine("enter the 7 digit to get the largest space between samilar values");
+
+                    int[] arr2 = new int[7];
+                    int firstInd = 0;
+                    int lastInd = 0;
+                    int spaceBetweenIndexes = 0;
+                    int samilarElement = 0;
+                    int max = 0;
+                    string result = "";
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        arr2[i] = int.Parse(Console.ReadLine());
+                        int j = 0;
+                        while(j< 7)
                         {
-                            maxVal = arr[arr.Length - 1];
-                            minVal = arr[0];
-                        }
-
-                        Console.WriteLine("max: " + maxVal + " and minVal: " + minVal + " and sum : " + sum + "\n");
-
-                      
-
-                        //another solutuon 
-
-                        /*
-                        for(int i =0; i < arr.Length;i++)
-                        {               
-                             arr [i] = int.Parse(Console.ReadLine());
-                             maxVal = arr.Max();//worked due to linq class of sys
-                             minVal = arr.Min();
-                             sum += arr[i];
-                        }
-                        Console.WriteLine("max: " + maxVal + " and minVal: " + minVal + " and sum : " + sum);
-                       */
-
-
-                        //task2
-
-            
-
-                        Console.WriteLine("enter the 7 digit to get the largest space between samilar values");
-
-                        int[] arr2 = new int[7];
-                        int firstInd = 0;
-                        int lastInd = 0;
-                        int spaceBetweenIndexes = 0;
-                        int samilarElement = 0;
-                        int max = 0;
-                        string result = "";
-
-                        for (int i = 0; i < 7; i++)
-                        {
-                            arr2[i] = int.Parse(Console.ReadLine());
-                            int j = 0;
-                            while(j< 7)
+                            if (arr2[i] == arr2[j])
                             {
-                                if (arr2[i] == arr2[j])
-                                {
-                                    firstInd = Array.IndexOf(arr2, arr2[i]);
-                                    lastInd = Array.LastIndexOf(arr2, arr2[j]);
-                                    spaceBetweenIndexes = lastInd - firstInd;
-                                    samilarElement = arr2[i];
-                                }
-                                if (spaceBetweenIndexes > max)
-                                {
-                                    max = spaceBetweenIndexes;
-                                    result = $"firstIndex of element  {samilarElement} : { firstInd} and lastIndex of element  {samilarElement} : { lastInd} and the space between them :{max}";
-                                }else if(max == 0)
-                                {
-                                    result = "not similar";
-                                }
-                                j++;
+                                firstInd = Array.IndexOf(arr2, arr2[i]);
+                                lastInd = Array.LastIndexOf(arr2, arr2[j]);
+                                spaceBetweenIndexes = lastInd - firstInd;
+                                samilarElement = arr2[i];
                             }
+                            if (spaceBetweenIndexes > max)
+                            {
+                                max = spaceBetweenIndexes;
+                                result = $"firstIndex of element  {samilarElement} : { firstInd} and lastIndex of element  {samilarElement} : { lastInd} and the space between them :{max}";
+                            }else if(max == 0)
+                            {
+                                result = "not similar";
+                            }
+                            j++;
                         }
-                        Console.WriteLine(result + "\n");
+                    }
+                    Console.WriteLine(result + "\n");
              
 
 
 
-                        //task3
+                    //task3
 
-                        Console.WriteLine("enter any digit to get the numbers of ones inside it ");
+                    Console.WriteLine("enter any digit to get the numbers of ones inside it ");
 
-                        int num = int.Parse(Console.ReadLine());
-                        ArrayList onesArr = new ArrayList() { };
-                        int count = 0;
-                        int flag =  0;
+                    int num = int.Parse(Console.ReadLine());
+                    ArrayList onesArr = new ArrayList() { };
+                    int count = 0;
+                    int flag =  0;
 
-                        for (int i = 1; i <= num ; i++)
+                    for (int i = 1; i <= num ; i++)
+                    {
+                        string [] newstr = Convert.ToString(i).Split("");
+                        for (int j = 0; j < newstr.Length; j++)
                         {
-                            string [] newstr = Convert.ToString(i).Split("");
-                            for (int j = 0; j < newstr.Length; j++)
+                            //Console.WriteLine(newstr[j]);
+                                if (newstr[j].Contains("1"))
                             {
-                               //Console.WriteLine(newstr[j]);
-                                 if (newstr[j].Contains("1"))
-                                {
-                                    onesArr.Add(newstr[j]);
-                                    if((newstr.Contains("10") || newstr.Contains("100")) && (num > 10)) flag = 1; 
-                                }
+                                onesArr.Add(newstr[j]);
+                                if((newstr.Contains("10") || newstr.Contains("100")) && (num > 10)) flag = 1; 
                             }
                         }
+                    }
 
-                        count = onesArr.Count;
-                        Console.WriteLine(count + flag);
-                        Console.WriteLine();
-
-
-                        //task 4
-
-                        Console.WriteLine("enter num to get the reversed num");
-
-                        int numToReverse = int.Parse(Console.ReadLine());
-                        string strNum = Convert.ToString(numToReverse);
-                        List <char> reversedCharArr = new List <char> ();
-
-                        for(var i = strNum.Length - 1; i >= 0;i--)
-                        {
-                            reversedCharArr.Add(strNum[i]);
-                        }
-
-                        string reversedNum = string.Join("", reversedCharArr);
-                        Console.WriteLine($"The Reversed Num is : {reversedNum}");
-
-
-            // =========================================================== lec 3  =================================================
-
-
-            //task 1 (Bank account object from banck account class)
+                    count = onesArr.Count;
+                    Console.WriteLine(count + flag);
                     Console.WriteLine();
 
-                    Console.WriteLine("============================ Bank Account Class ===========================================");
-                    Console.WriteLine();
 
-                    BankAccount account_1 = new BankAccount();
+                    //task 4
 
-                    account_1.SetId(20);
-                    account_1.SetName("Zenab");
-                    //Console.WriteLine(ban.GetId());
-                    //Console.WriteLine (account_1.GetName());
-                    account_1.Deposite(5000);
+                    Console.WriteLine("enter num to get the reversed num");
 
-                    account_1.Print();
-                    Console.WriteLine();
+                    int numToReverse = int.Parse(Console.ReadLine());
+                    string strNum = Convert.ToString(numToReverse);
+                    List <char> reversedCharArr = new List <char> ();
+
+                    for(var i = strNum.Length - 1; i >= 0;i--)
+                    {
+                        reversedCharArr.Add(strNum[i]);
+                    }
+
+                    string reversedNum = string.Join("", reversedCharArr);
+                    Console.WriteLine($"The Reversed Num is : {reversedNum}");
+
+
+        // =========================================================== lec 3  =================================================
+
+
+        //task 1 (Bank account object from banck account class)
+                Console.WriteLine();
+
+                Console.WriteLine("============================ Bank Account Class ===========================================");
+                Console.WriteLine();
+
+                BankAccount account_1 = new BankAccount();
+                account_1.Id = 20;
+                account_1.SetName("Zenab");
+                //Console.WriteLine(ban.GetId());
+                //Console.WriteLine (account_1.GetName());
+                account_1.Deposite(5000);
+                account_1.Print();
+
+                account_1.Print();
+                Console.WriteLine();
         
-                    account_1.Withdrawl(500);
-                    account_1.Print();
-                    Console.WriteLine();
+                account_1.Withdrawl(500);
+                account_1.Print();
+                Console.WriteLine();
 
-                    account_1.Deposite(50);
-                    account_1.Print();
+                account_1.Deposite(50);
+                account_1.Print();
 
-                    Console.WriteLine();
+                Console.WriteLine();
 
+                BankAccount account_2 = new BankAccount(30, "zoz", 12234);//use constructor method 
+                account_2.Deposite(60450);
+                Console.WriteLine(account_2.GetName());
+                account_2.Print();
+                account_2.Withdrawl(600);
+                account_2.Print();
 
-                    //task 2 (complex Number)
+         
 
-                    Console.WriteLine("============================ Complex Num Class ===========================================");
-                    Console.WriteLine();
-
-                    ComplexNum num_1 = new ComplexNum();
-
-                    num_1.SetRealNum(5);
-                    num_1.SetImaginaryNum(- 3.35);
-                    Console.WriteLine($"The Real Numer is : {num_1.GetRealNum()}");
-                    Console.WriteLine($"The Real Numer is : {num_1.GetImaginaryNum()}");
-                    num_1.PrintNum();
-                    Console.WriteLine();
-
-                    //task 3 (student class)
-                    Console.WriteLine("============================ Student Class ===========================================");
-                    Console.WriteLine();
-
-                    Student std_1 = new Student();
-
-                    std_1.SetId(123456);
-                    std_1.SetName("Zenab Mohamed");
-                    std_1.SetAge(21);
-                    std_1.SetGrade(87.6);
-                    std_1.PrintInfo();
-                    Console.WriteLine();
-            
-
-            // =========================================================== lec 4  =================================================
-
-            // task1 example about calling by ref and calling by val
-
-            int num1 = 20;
-            int num2 = 30;
-            Console.WriteLine("num1 is : " + num1 + " before swapping ");
-            Console.WriteLine("num2 is : " + num2 + " before swapping");
-            Console.WriteLine();
-
-            Swaping( num1, num2);//call by value
-
-            Console.WriteLine("num1 is " + num1 + " after swapping calling by value");
-            Console.WriteLine("num2 is " + num2 + " after swapping calling by value");
-
-            Console.WriteLine();
-            Console.WriteLine("===================================================");
-            Console.WriteLine();
-
-            Console.WriteLine("num1 is : " + num1 + " before swapping");
-            Console.WriteLine("num2 is : " + num2 + " before swapping");
-
-            Swap(ref num1, ref num2);//call by ref
-
-            Console.WriteLine("num1 is " + num1 + " after swapping calling by value by ref");
-            Console.WriteLine("num2 is " + num2 + " after swapping calling by value by ref");
+                Console.WriteLine();
 
 
-            //task3 - Factorial Func 
-            int facstOfNum = 5;
-            Console.WriteLine(Factorial(facstOfNum));
+                //task 2 (complex Number)
 
-            //task4 - Power Func
-            Console.WriteLine(Power(y:5,x:2));//named argument will make as this 2**5
+                Console.WriteLine("============================ Complex Num Class ===========================================");
+                Console.WriteLine();
 
-            //task 5 Calc using outkeyword
-            double num_12 = 40;
-            double num_23 = 25;
-            string res;
-            char op = '/';
-            Calc(ref num_12,ref num_23,ref op,out res);
-            Console.WriteLine(res);
+                ComplexNum num_1 = new ComplexNum();
 
-            //task6 primaryNUM
+                num_1.SetRealNum(5);
+                num_1.SetImaginaryNum(- 3.35);
+                Console.WriteLine($"The Real Numer is : {num_1.GetRealNum()}");
+                Console.WriteLine($"The Real Numer is : {num_1.GetImaginaryNum()}");
+                num_1.PrintNum();
+                Console.WriteLine();
 
-            PrimNum(100);
-          
+                //task 3 (student class)
+                Console.WriteLine("============================ Student Class ===========================================");
+                Console.WriteLine();
 
-            Console.ReadKey();
+                Student std_1 = new Student();
+                std_1.Name = "Suad";
+                std_1.Id = 12345;
+                std_1.Age = 21;
+                std_1.SetGrade(87.6);
+                Console.WriteLine();
+        // =========================================================== lec 4  =================================================
+
+
+
+        // task1 example about calling by ref and calling by val
+
+        int num1 = 20;
+        int num2 = 30;
+        Console.WriteLine("num1 is : " + num1 + " before swapping ");
+        Console.WriteLine("num2 is : " + num2 + " before swapping");
+        Console.WriteLine();
+
+        Swaping( num1, num2);//call by value
+
+        Console.WriteLine("num1 is " + num1 + " after swapping calling by value");
+        Console.WriteLine("num2 is " + num2 + " after swapping calling by value");
+
+        Console.WriteLine();
+        Console.WriteLine("===================================================");
+        Console.WriteLine();
+
+        Console.WriteLine("num1 is : " + num1 + " before swapping");
+        Console.WriteLine("num2 is : " + num2 + " before swapping");
+
+        Swap(ref num1, ref num2);//call by ref
+
+        Console.WriteLine("num1 is " + num1 + " after swapping calling by value by ref");
+        Console.WriteLine("num2 is " + num2 + " after swapping calling by value by ref");
+
+
+        //task3 - Factorial Func 
+        int facstOfNum = 5;
+        Console.WriteLine(Factorial(facstOfNum));
+
+        //task4 - Power Func
+        Console.WriteLine(Power(y:5,x:2));//named argument will make as this 2**5
+
+        //task 5 Calc using outkeyword
+        double num_12 = 40;
+        double num_23 = 25;
+        string res;
+        char op = '/';
+        Calc(ref num_12,ref num_23,ref op,out res);
+        Console.WriteLine(res);
+
+        //task6 primaryNUM
+
+        PrimNum(100);
+
+
+       
+        // =========================================================== lec 5  =================================================
+
+
+        Student std_2 = new Student();
+
+        std_2.Id=10;
+        std_2.Name = "Zenab";
+        std_2.Age = 21;
+        std_2.SetGrade(87.6);
+        std_2.Print();
+        Console.WriteLine();
+
+
+        Person p2 = new Person();
+        p2.Print(); //will return the Print func
+
+
+        Person p1 = std_1; //refrence equality and to take print fun of Print method in child class we use virtual override keyword 
+        p1.Print();
+
+
+        Console.WriteLine();
+        Instructor instructor_1 = new Instructor(12,"Omar",25,100000);
+        instructor_1.Print();
+
+        Console.WriteLine(Mul(1, 2));
+        Console.WriteLine(Mul(1, 2, 3, 4));
+        Console.WriteLine(Mul(1, 2, 3, 4, 5, 6));
+
+        //max function will return max num of any number of parameters 
+        Console.WriteLine(Max(1, 2, 3, 4,6,7));
+
+
+        Console.ReadKey();
+        
         }
 
-            //Swap Method using calling by value 
-            static void Swaping(int x, int y)
+        
+
+        //Swap Method using calling by value 
+        static void Swaping(int x, int y)
+        {
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+
+        //swap Method with referce calling 
+        static void Swap(ref int x, ref int y)
             {
                 int temp = x;
                 x = y;
                 y = temp;
             }
 
-            //swap Method with referce calling 
-            static void Swap(ref int x, ref int y)
-                {
-                    int temp = x;
-                    x = y;
-                    y = temp;
-                }
+        //factorial using recersive Method
+        public static int Factorial(int x = 0)
+        {
+            int result = 0;
+            if (x == 0)
+                return 1;
+            result = x * Factorial(x - 1);
+            return result;
+        }
 
-            //factorial using recersive Method
-            public static int Factorial(int x = 0)
-            {
-                int result = 0;
-                if (x == 0)
-                    return 1;
-                result = x * Factorial(x - 1);
-                return result;
-            }
+        //power method 
+        public static double Power(double x = 1,double y =1)
+        {
+            double result = 1;
 
-            //power method 
-            public static double Power(double x = 1,double y =1)
-            {
-              double result = 1;
-
-            for (var i = 1; i <= y; i++)
-            {
-                result *= x;
-            }
-                return result;
-            }
+        for (var i = 1; i <= y; i++)
+        {
+            result *= x;
+        }
+            return result;
+        }
 
         //get the value of arthematic operations with param you enetered
-            public static void Calc(ref double x, ref double y, ref char op, out string finalResult)
+        public static void Calc(ref double x, ref double y, ref char op, out string finalResult)
+        {
+
+            string opName = "";
+            double result = 0;
+
+            switch (op)
             {
+                case '+':
+                    opName = "Summation";
+                    result = x + y;
+                    finalResult = $"the {opName} is : {result} ";
+                    //Console.WriteLine(finalResult);
+                    break;
 
-                string opName = "";
-                double result = 0;
+                case '-':
+                    opName = "Subtraction";
+                    result = x - y;
+                    finalResult = $"the {opName} is : {result} ";
+                    //Console.WriteLine(finalResult);
+                    break;
 
-                switch (op)
-                {
-                    case '+':
-                        opName = "Summation";
-                        result = x + y;
-                        finalResult = $"the {opName} is : {result} ";
-                        //Console.WriteLine(finalResult);
-                        break;
+                case '*':
+                    opName = "Multiply";
+                    result = x * y;
+                    finalResult = $"the {opName} is : {result} ";
+                    //Console.WriteLine(finalResult);
+                    break;
 
-                    case '-':
-                        opName = "Subtraction";
-                        result = x - y;
-                        finalResult = $"the {opName} is : {result} ";
-                        //Console.WriteLine(finalResult);
-                        break;
+                case '/':
+                    opName = "Divsion";
+                    result = x / y;
+                    finalResult = $"the {opName} is : {result} ";
+                    //Console.WriteLine(finalResult);
+                    break;
 
-                    case '*':
-                        opName = "Multiply";
-                        result = x * y;
-                        finalResult = $"the {opName} is : {result} ";
-                        //Console.WriteLine(finalResult);
-                        break;
-
-                    case '/':
-                        opName = "Divsion";
-                        result = x / y;
-                        finalResult = $"the {opName} is : {result} ";
-                        //Console.WriteLine(finalResult);
-                        break;
-
-                    default:
-                        finalResult = "this is not valid operation please try again";
-                        //Console.WriteLine(finalResult);
-                        break;
-                }
+                default:
+                    finalResult = "this is not valid operation please try again";
+                    //Console.WriteLine(finalResult);
+                    break;
             }
+        }
 
-            //task 6 primary Method
+        //task 6 primary Method
 
-            public static void PrimNum(int num = 0)
+        public static void PrimNum(int num = 0)
+        {
+
+            for (int i = 2; i <= num; i++)
             {
+                bool check = true;
 
-                for (int i = 2; i <= num; i++)
+                for (int j = 2; j < i; j++)
                 {
-                    bool check = true;
-
-                    for (int j = 2; j < i; j++)
+                    if (i % j == 0)
                     {
-                        if (i % j == 0)
-                        {
-                            check = false;
-                            break;
-                        }
+                        check = false;
+                        break;
                     }
-
-                    if (check)
-                    {
-                        Console.WriteLine(i);
-                    }
-
                 }
+
+                if (check)
+                {
+                    Console.WriteLine(i);
+                }
+
+            }
 
              
+        }
+
+
+
+        //========================================================================== lec 5 ========================================================
+
+
+        // use params Key word to take any number of parameters 
+        static int Mul(params int[] x)
+        {
+
+        int result = 1;
+
+            foreach(var item in x)
+        {
+            result *= item;
+        }
+        return result;
+        }
+
+
+        //max num in array
+        public static int Max(params int[] arr)
+        {
+            int max = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
             }
+            return max;
+        }
 
 
-        //==========================================================================lec 5 ========================================================
 
-
-    }
-}
+        }
+        }

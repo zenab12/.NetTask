@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "ITITasks/1.0.0": {
+      "task 1/1.0.0": {
         "runtime": {
-          "ITITasks.dll": {}
+          "task 1.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "ITITasks/1.0.0": {
+    "task 1/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

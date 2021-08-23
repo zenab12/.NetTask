@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\C#\\task 1\\ITITasks\\ITITasks.csproj": {}
+    "F:\\C#\\task 1\\task 1\\task 1.csproj": {}
   },
   "projects": {
-    "F:\\C#\\task 1\\ITITasks\\ITITasks.csproj": {
+    "F:\\C#\\task 1\\task 1\\task 1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\C#\\task 1\\ITITasks\\ITITasks.csproj",
-        "projectName": "ITITasks",
-        "projectPath": "F:\\C#\\task 1\\ITITasks\\ITITasks.csproj",
+        "projectUniqueName": "F:\\C#\\task 1\\task 1\\task 1.csproj",
+        "projectName": "task 1",
+        "projectPath": "F:\\C#\\task 1\\task 1\\task 1.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "F:\\C#\\task 1\\ITITasks\\obj\\",
+        "outputPath": "F:\\C#\\task 1\\task 1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

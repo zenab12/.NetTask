@@ -1,0 +1,13 @@
+F:\C#\task 1\ITITasks\bin\Debug\netcoreapp3.1\ITITasks.exe
+F:\C#\task 1\ITITasks\bin\Debug\netcoreapp3.1\ITITasks.deps.json
+F:\C#\task 1\ITITasks\bin\Debug\netcoreapp3.1\ITITasks.runtimeconfig.json
+F:\C#\task 1\ITITasks\bin\Debug\netcoreapp3.1\ITITasks.runtimeconfig.dev.json
+F:\C#\task 1\ITITasks\bin\Debug\netcoreapp3.1\ITITasks.dll
+F:\C#\task 1\ITITasks\bin\Debug\netcoreapp3.1\ITITasks.pdb
+F:\C#\task 1\ITITasks\obj\Debug\netcoreapp3.1\ITITasks.csproj.AssemblyReference.cache
+F:\C#\task 1\ITITasks\obj\Debug\netcoreapp3.1\ITITasks.AssemblyInfoInputs.cache
+F:\C#\task 1\ITITasks\obj\Debug\netcoreapp3.1\ITITasks.AssemblyInfo.cs
+F:\C#\task 1\ITITasks\obj\Debug\netcoreapp3.1\ITITasks.csproj.CoreCompileInputs.cache
+F:\C#\task 1\ITITasks\obj\Debug\netcoreapp3.1\ITITasks.dll
+F:\C#\task 1\ITITasks\obj\Debug\netcoreapp3.1\ITITasks.pdb
+F:\C#\task 1\ITITasks\obj\Debug\netcoreapp3.1\ITITasks.genruntimeconfig.cache

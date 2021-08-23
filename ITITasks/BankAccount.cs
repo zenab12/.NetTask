@@ -4,36 +4,43 @@ using System.Text;
 
 namespace task_1
 {
-    class BankAccount
+  public class BankAccount
     {
         int id;
         string name;
         int balance;
 
-        public void SetId(int _id)
-        {
-            id = _id;
-        }
-        public int GetId()
-        {
-            return id;
-        }
+        //make empty constructor method 
+            public BankAccount()
+            { 
+            }
 
-        public void SetName(string _name)
-        {
-            if(_name.Length > 3)
-               name = _name;
-        }
-        public string GetName()
-        {
-            return name;
-        }
+            //make  constructor method
+            public BankAccount(int id , string name ,int balance)
+            {
+                this.Id = id;
+                this.name = name;
+                this.balance = balance;
+            }
+
+           //encapsulation for id 
+            public int Id { set => id = value; get => id; }
+
+           //long way for encapsulation through methods 
+            public void SetName(string _name)
+            {
+                if(_name.Length > 3)
+                   name = _name;
+            }
+            public string GetName()
+            {
+                return name;
+            }
 
         public void Deposite(int _balance)
         {
             if((_balance < 1000000) && (_balance > 50))
                balance += _balance;
-
             else
                 Console.WriteLine("this is not enough to deposite in your account ");
         }
